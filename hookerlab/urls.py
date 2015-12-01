@@ -17,8 +17,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', 'hookerlab.views.home', name='home'),
-    url(r'^login/', 'hookerlab.views.login', name='login'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'hookerlab.views.home', name='home'),
+    # url(r'^login/', 'hookerlab.views.login', name='login'),
+    url(r'^auth/', 'hookerlab.views.auth_view', name='auth_view'),
+    url(r'^logout/', 'hookerlab.views.logout', name='logout'),
+    url(r'^loggedin/', 'hookerlab.views.loggedin', name='loggedin'),
+    url(r'^invalid/', 'hookerlab.views.invalid_login', name='invalid_login'),
     
 ]
